@@ -1,0 +1,26 @@
+@charset "utf-8";
+@use "./_variables" as *;
+// ====================================================
+// mixin  フォントサイズ：VW 幅1200とき　フォントサイズ12pxにしたい時　@include fz_vw(12,1200);
+// ====================================================
+
+// 第一引数で基準となる画面幅のフォントサイズ、第二引数で基準となる画面幅を入力
+@function get_vw($size, $viewport: 1200) {
+  $rate: calc(100 / $viewport);
+  @return $rate * $size * 1vw;
+}
+@mixin fz_vw($font_size: 10, $viewport: 1200) {
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size, $viewport);
+}
+
+@function pixel_to_percent($targetW, $parentW) {
+  @return 100% * calc($targetW / $parentW);
+}
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+

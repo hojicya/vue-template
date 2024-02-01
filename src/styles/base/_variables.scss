@@ -1,0 +1,22 @@
+@charset "utf-8";
+/*================================
+  color
+=================================*/
+$colorBlack: #000;
+$colorWhite: #fff;
+
+
+/*================================
+  breakpoint
+=================================*/
+$breakpoints: (
+  "sp": "screen and (max-width: 750px)",
+  "tab": "screen and (min-width: 751px) and (max-width: 1279px)",
+  "tab-pc": "screen and (min-width: 751px)",
+  "pc": "screen and (min-width: 1280px)",
+);
+
+/*================================
+  font
+=================================*/
+$font-default: "Zen Kaku Gothic New", sans-serif;
